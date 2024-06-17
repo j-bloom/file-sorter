@@ -23,6 +23,18 @@ Several new folders will be created in this process:
  
 Based on the extensions of the files, they will then be moved into their respective folders.  
 
+## How to use the application
+There are currently two ways to use this application.   
+1. Easy way (Windows) - Clone the repo on a Windows computer to a directory of your choice, double click of the ".exe" file and watch your files organize like magic!  
+2. (Any OS with Python installed) - Clone the repo to a directory of your choice.  
+   Then open the "fileSorter.py" file in your favorite text editor/IDE, and  
+   a) press the run button or use one of the below commands in the IDE terminal.  
+   b) navigate to the file in a command line tool.  
+   Once you are in the same Folder/Directory simply run:  
+   - Windows - `py .\fileSorter.py` or `py .\path\to\file\fileSorter.py`
+   - Linux - `python3 fileSorter.py` or `python3 path/to/file/fileSorter.py`
+   - MacOS - `python3 fileSorter.py` or `python3 path/to/file/fileSorter.py`
+
 ## Screenshots
 Before the program is run:  
 ![Screenshot from 2024-06-17 00-05-15](https://github.com/j-bloom/file-sorter/assets/36741471/b2045bf9-274b-479f-bacf-02f4ba739a4e)

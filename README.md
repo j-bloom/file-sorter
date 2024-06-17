@@ -23,6 +23,14 @@ Several new folders will be created in this process:
  
 Based on the extensions of the files, they will then be moved into their respective folders.  
 
+## Screenshots
+Before the program is run:  
+![Screenshot from 2024-06-17 00-05-15](https://github.com/j-bloom/file-sorter/assets/36741471/b2045bf9-274b-479f-bacf-02f4ba739a4e)
+
+After the program is run:
+![Screenshot from 2024-06-17 00-08-02](https://github.com/j-bloom/file-sorter/assets/36741471/b2cc5b0c-be60-4b67-a523-08d6a4398668)
+
+
 ## Approach to the application
 I first thought of creating this application as an automated tool, which would allow the files to be moved into the correct folders at the time they are downloaded.  
 

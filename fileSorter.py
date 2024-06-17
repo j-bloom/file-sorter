@@ -29,7 +29,8 @@ def getBasepath():
 
 directory_names = ["csv files", "text files", "image files", "pdf files", 
                    "video files", "audio files", "shell scripts", 
-                   "drivers and executables", "presentations(powerpoint) files"]
+                   "drivers and executables", "presentations(powerpoint) files",
+                   "zip files"]
 
 image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi", ".png", 
                     ".gif", ".webp", ".tiff", ".tif", ".psd", ".raw", ".arw", 
@@ -39,7 +40,7 @@ image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi", ".png",
 
 video_extensions = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".ogg",
                     ".mp4", ".mp4v", ".m4v", ".avi", ".wmv", ".mov", ".qt", 
-                    ".flv", ".swf", ".avchd",]
+                    ".flv", ".swf", ".avchd", ".aiff"]
 
 audio_extensions = [".m4a", ".flac", "mp3", ".wav", ".wma", ".aac",]
 
@@ -52,9 +53,11 @@ shell_document_extensions = [".sh",]
 pdf_document_extensions = [".pdf",]
 
 windows_extensions = [".sys", ".dll", ".drv", ".ocx", ".ax", ".exe", ".com", 
-                      ".bat", ".pif",]
+                      ".bat", ".pif", ".msi", ".appinstaller",]
 
 presentation_document_extensions = ["ppt", ".pptx"]
+
+zip_file_extension = [".zip", ".7z"]
 
 dest_dir_image = os.path.abspath(getBasepath() + '/image files')
 dest_dir_video = os.path.abspath(getBasepath() + '/video files')
@@ -65,6 +68,7 @@ dest_dir_pdf = os.path.abspath(getBasepath() + '/pdf files')
 dest_dir_shell = os.path.abspath(getBasepath() + '/shell scripts')
 dest_dir_presentation = os.path.abspath(getBasepath() + '/presentation (powerpoint) files')
 dest_dir_windows = os.path.abspath(getBasepath() + '/drivers and executables')
+dest_dir_zip = os.path.abspath(getBasepath() + '/zip files')
 
 
 def move_files():
@@ -100,7 +104,15 @@ def move_files():
 
         for extension in presentation_document_extensions:
             if entry.endswith(extension):
+                shutil.move(os.path.join(base_path, entry), os.path.join(dest_dir_presentation, entry))
+
+        for extension in pdf_document_extensions:
+            if entry.endswith(extension):
                 shutil.move(os.path.join(base_path, entry), os.path.join(dest_dir_pdf, entry))
+
+        for extension in zip_file_extension:
+            if entry.endswith(extension):
+                shutil.move(os.path.join(base_path, entry), os.path.join(dest_dir_zip, entry))
 
         if (user_system == 'Linux' or user_system == 'Darwin'):
             for extension in shell_document_extensions:
@@ -110,7 +122,7 @@ def move_files():
         if(user_system == 'Windows'):
             for extension in windows_extensions:
                 if entry.endswith(extension):
-                    shutil.move(os.path.join(base_path, entry), os.path.join(dest_dir_text, entry))
+                    shutil.move(os.path.join(base_path, entry), os.path.join(dest_dir_windows, entry))
 
 
 if __name__ == "__main__":

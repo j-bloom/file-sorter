@@ -16,14 +16,14 @@ def getBasepath():
     user_name = get_username()
 
     if(user_system == 'Linux'):
-        base_path = rf"/home/{user_name}/Downloads/"
+        base_path = rf'/home/{user_name}/Downloads/'
         return base_path
     elif(user_system == 'Windows'):
         base_path = rf'C:/Users/{user_name}/Downloads/'
         return base_path
     elif(user_system == 'Darwin'):
-        # TODO: create functionality for MacOS
-        pass
+        base_path = rf'/Users/{user_name}/Downloads'
+        return base_path    
     else:
         print('Unknown System') 
 
